@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Festival de Pastas — Todos los domingos</title>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (solo si lo hospedas fuera de Canva; si no, puedes dejar CSS plano) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            playfair: ['"Playfair Display"', 'serif'],
+            opensans: ['"Open Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            olive: '#6B7C32',
+            gold: '#D4AF37',
+            dark: '#111827',
+            slate700: '#374151',
+            slate800: '#1F2937',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Fondo con overlay para contraste */
+    body {
+      background-image: url('https://i.imgur.com/fYauf5U.jpeg'); /* Cambia por tu fondo si querés */
+      background-size: cover;
+      background-position: center;
+      background-attachment: scroll; /* Mejor en móvil */
+      background-repeat: no-repeat;
+    }
+    .overlay::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.38);
+      z-index: -1;
+    }
+    /* Animación suave al hacer scroll */
+    [data-fade] { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    [data-fade].in { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+
+<body class="overlay text-white font-opensans antialiased">
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/595981177244?text=Hola%2C%20quiero%20pedir%20para%20el%20Festival%20de%20Pastas%20del%20domingo.%20Mi%20pedido%3A%20%5Bplato%20%2B%20salsa%5D%2C%20Retiro%20a%20las%20%5Bhora%5D."
+     class="fixed bottom-5 right-5 z-50 inline-flex items-center justify-center w-14 h-14 rounded-full bg-olive shadow-lg hover:scale-105 active:scale-95 transition"
+     aria-label="Pedir por WhatsApp">
+    <span style="font-size:28px;">💬</span>
+  </a>
+
+  <!-- HERO -->
+  <header class="max-w-5xl mx-auto px-4 pt-14 pb-10 text-center" data-fade>
+    <h1 class="font-playfair font-bold text-5xl md:text-6xl">Festival de Pastas</h1>
+    <p class="mt-3 text-xl md:text-2xl text-gray-200">Todos los domingos</p>
+
+    <div class="mt-6 inline-flex items-center gap-3 flex-wrap justify-center">
+      <span class="px-4 py-2 rounded-full bg-gold text-white font-semibold">Desde 25.000 Gs</span>
+      <span class="px-4 py-2 rounded-full bg-black/50">Pedidos hasta: <strong>11:30</strong></span>
+      <span class="px-4 py-2 rounded-full bg-black/50">Retiro: <strong>[Dirección]</strong></span>
+      <span class="px-4 py-2 rounded-full bg-black/50">Horario: <strong>12:30–14:30</strong></span>
+      <span class="px-4 py-2 rounded-full bg-black/50">Pago: <strong>Efectivo/Transferencia</strong></span>
+    </div>
+
+    <div class="mt-8">
+      <a href="#pedido"
+         class="inline-block bg-olive hover:bg-green-700 text-white font-bold py-3 px-7 rounded-full text-lg transition hover:scale-105">Pedir por WhatsApp</a>
+    </div>
+  </header>
+
+  <!-- CÓMO PEDIR -->
+  <section class="max-w-5xl mx-auto px-4 pb-8" data-fade>
+    <div class="rounded-3xl bg-slate800/95 backdrop-blur p-6 md:p-10">
+      <h2 class="font-playfair text-3xl md:text-4xl font-bold text-center mb-6">¿Cómo pedir?</h2>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="p-5 rounded-2xl bg-slate700/80">
+          <div class="text-5xl mb-3">🍝</div>
+          <p class="text-lg"><strong>Elegí</strong> tu plato y salsa</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-slate700/80">
+          <div class="text-5xl mb-3">📱</div>
+          <p class="text-lg"><strong>Escribinos</strong> por WhatsApp</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-slate700/80">
+          <div class="text-5xl mb-3">📍</div>
+          <p class="text-lg"><strong>Retirá/Recibí</strong> tu pedido</p>
+        </div>
+      </div>
+      <div class="mt-7 text-center">
+        <a href="https://wa.me/595981177244?text=Hola%2C%20quiero%20pedir%20para%20el%20Festival%20de%20Pastas%20del%20domingo.%20Mi%20pedido%3A%20%5Bplato%20%2B%20salsa%5D%2C%20Retiro%20a%20las%20%5Bhora%5D."
+           class="inline-block bg-olive hover:bg-green-700 text-white font-bold py-3 px-7 rounded-full text-lg transition hover:scale-105">Hacer pedido ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENÚ -->
+  <section class="max-w-5xl mx-auto px-4 py-4" data-fade>
+    <div class="rounded-3xl bg-slate800/95 backdrop-blur p-6 md:p-10">
+      <h2 class="font-playfair text-3xl md:text-4xl font-bold text-center mb-7">Menú de Pastas</h2>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between p-4 rounded-xl bg-slate700/90">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🥟</span>
+              <span class="text-lg font-semibold">Ñoquis de papa</span>
+            </div>
+            <span class="font-semibold">₲ 25.000</span>
+          </div>
+
+          <div class="flex items-center justify-between p-4 rounded-xl bg-slate700/90">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🍠</span>
+              <span class="text-lg font-semibold">Ñoquis de batata</span>
+            </div>
+            <span class="font-semibold">₲ 25.000</span>
+          </div>
+
+          <div class="flex items-center justify-between p-4 rounded-xl bg-slate700/90">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🌯</span>
+              <span class="text-lg font-semibold">Canelones de pollo</span>
+            </div>
+            <span class="font-semibold">₲ 25.000</span>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex items-center justify-between p-4 rounded-xl bg-slate700/90">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">🍝</span>
+              <span class="text-lg font-semibold">Lasaña tradicional</span>
+            </div>
+            <span class="font-semibold">₲ 25.000</span>
+          </div>
+
+          <div class="p-4 rounded-xl bg-gradient-to-r from-slate800 to-black ring-1 ring-gold/40">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="text-3xl">⭐</span>
+                <span class="text-lg font-semibold">Lasaña Keto</span>
+              </div>
+              <span class="font-bold text-white">₲ 30.000</span>
+            </div>
+            <p class="mt-2 text-sm text-gray-300">Baja en carbohidratos</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 text-center">
+        <a href="#pedido" class="inline-block bg-olive hover:bg-green-700 text-white font-bold py-3 px-7 rounded-full text-lg transition hover:scale-105">Quiero pedir</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SALSAS -->
+  <section class="max-w-5xl mx-auto px-4 py-4" data-fade>
+    <div class="rounded-3xl bg-slate800/95 backdrop-blur p-6 md:p-10">
+      <h2 class="font-playfair text-3xl md:text-4xl font-bold text-center mb-7">Elegí tu salsa favorita</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center p-6 rounded-2xl bg-slate700/80">
+          <div class="text-6xl mb-3">🧀</div>
+          <h3 class="text-xl font-semibold">4 Quesos</h3>
+          <p class="text-gray-300 mt-1">Parmesano, mozzarella, gorgonzola y crema</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-slate700/80">
+          <div class="text-6xl mb-3">🍅</div>
+          <h3 class="text-xl font-semibold">Boloñesa</h3>
+          <p class="text-gray-300 mt-1">Salsa de tomate con carne, cocción lenta</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-slate700/80">
+          <div class="text-6xl mb-3">🍗</div>
+          <h3 class="text-xl font-semibold">Blanca con pollo</h3>
+          <p class="text-gray-300 mt-1">Bechamel suave con pechuga</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="max-w-5xl mx-auto px-4 py-4" data-fade>
+    <div class="rounded-3xl bg-white/95 text-dark p-6 md:p-10">
+      <h2 class="font-playfair text-3xl md:text-4xl font-bold text-center mb-7">Lo que dicen nuestros clientes</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <figure class="p-5 rounded-2xl bg-gray-50">
+          <div class="text-yellow-500 mb-2" aria-hidden="true">★★★★★</div>
+          <blockquote class="text-gray-700">“Los ñoquis más suaves que probé.”</blockquote>
+          <figcaption class="mt-2 font-semibold">Laura M.</figcaption>
+        </figure>
+        <figure class="p-5 rounded-2xl bg-gray-50">
+          <div class="text-yellow-500 mb-2" aria-hidden="true">★★★★★</div>
+          <blockquote class="text-gray-700">“La lasaña keto está increíble.”</blockquote>
+          <figcaption class="mt-2 font-semibold">Carlos R.</figcaption>
+        </figure>
+        <figure class="p-5 rounded-2xl bg-gray-50">
+          <div class="text-yellow-500 mb-2" aria-hidden="true">★★★★★</div>
+          <blockquote class="text-gray-700">“Rápido y riquísimo. Volveré.”</blockquote>
+          <figcaption class="mt-2 font-semibold">Ana G.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEDIDOS -->
+  <section id="pedido" class="max-w-5xl mx-auto px-4 py-4" data-fade>
+    <div class="rounded-3xl bg-white/95 text-dark p-6 md:p-10 text-center">
+      <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-5">¡Hacé tu pedido!</h2>
+      <div class="text-6xl mb-2" aria-hidden="true">📱</div>
+      <p class="text-xl font-semibold mb-2">Pedidos por WhatsApp</p>
+      <p class="text-2xl font-bold text-olive mb-5">0981-177244</p>
+
+      <a href="https://wa.me/595981177244?text=Hola%2C%20quiero%20pedir%20para%20el%20Festival%20de%20Pastas%20del%20domingo.%20Mi%20pedido%3A%20%5Bplato%20%2B%20salsa%5D%2C%20Retiro%20a%20las%20%5Bhora%5D."
+         class="inline-block bg-olive hover:bg-green-700 text-white font-bold py-3 px-7 rounded-full text-lg transition hover:scale-105">Enviar mensaje ahora</a>
+
+      <div class="mt-6">
+        <!-- TIP: podés generar un QR a este mismo enlace y ponerlo aquí como <img> -->
+        <!-- <img src="qr-whatsapp.png" alt="QR a WhatsApp" class="mx-auto w-32 h-32"> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section class="max-w-5xl mx-auto px-4 py-6" data-fade>
+    <h2 class="font-playfair text-3xl md:text-4xl font-bold text-center mb-7">📍 Retirá tu pedido aquí</h2>
+    <div class="grid md:grid-cols-2 gap-6 items-stretch">
+      <div class="rounded-3xl bg-white/95 text-dark p-6 md:p-10">
+        <h3 class="text-2xl font-semibold mb-2">Punto de retiro</h3>
+        <p class="text-gray-700 mb-5">Visitanos para retirar tu pedido de pastas frescas todos los domingos.</p>
+        <a href="https://maps.app.goo.gl/6Ca4GiFvWgD93Hm66" target="_blank"
+           class="inline-block bg-olive hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-full text-lg transition hover:scale-105">Ver en Google Maps</a>
+      </div>
+
+      <div class="rounded-3xl bg-[#FAF7F2] text-dark p-6">
+        <div class="text-center">
+          <div class="text-4xl mb-3" aria-hidden="true">🗺️</div>
+          <h4 class="text-xl font-semibold mb-2">Nuestra ubicación</h4>
+          <p class="text-gray-700 mb-4">Hacé clic en el botón para ver la ubicación exacta en Google Maps.</p>
+          <div class="rounded-lg p-4 bg-olive/10">
+            <p class="text-sm font-semibold text-olive">💡 Tip: Guardá la ubicación en tu teléfono para encontrarnos fácilmente.</p>
+          </div>
+          <!-- Reemplazá la imagen por una captura de tu mapa si querés -->
+          <!-- <img src="captura-mapa.jpg" alt="Mapa de ubicación" class="mt-4 rounded-xl w-full"> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate800/95 backdrop-blur text-center py-8 mt-6">
+    <p class="text-lg">Festival de Pastas — Todos los domingos</p>
+    <p class="text-gray-300">¡La mejor pasta casera te está esperando!</p>
+  </footer>
+
+  <script>
+    // Observador para animaciones de entrada
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    document.querySelectorAll('[data-fade]').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
